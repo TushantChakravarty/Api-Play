@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="prism.css">
+    <title>Api Play</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Api Play</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">fakebutton</a>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="my-3">
+            Play with Api's
+        </h1>
+    </div>
+    <div class="container">
+        <div class="form-group row ">
+            <label for="exampleInputPassword1 " class="col-sm-2 col-form-label">URL</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control " id="url" placeholder="enter URL here">
+            </div>
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Rqruest Type</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="request" id="get" value="GET">
+                        <label class="form-check-label" for="GET">
+                            GET
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="request" id="post" value="POST">
+                        <label class="form-check-label" for="post">
+                            POST
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">content type</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contenttype" id="jsonradio" value="json">
+                        <label class="form-check-label" for="json">
+                            JSON
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contenttype" id="paramsradio" value="custom">
+                        <label class="form-check-label" for="custom">
+                            Custom parameters
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+        <!--content box-->
+        <div id="parameterbox" class="parambox">
+            <div class="form-row">
+                <label for="url" class="col-sm-2 col-form-label">parameter 1</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="key1" placeholder="enter parameter 1 key">
+                </div>
+                <div class=" col-md-4">
+                    <input type="text" class="form-control" id="value1" placeholder="enter parameter 1 value">
+                </div>
+                <button id="plus" class="btn btn-primary">+</button>
+            </div>
+        </div>
+        <div id="newparam" class="parambox my-3"></div>
+        <!--json box-->
+        <div class="my-3" id="jsonbox">
+            <div class="form-group row">
+                <label for="jsonbox" class="col-sm-2 col-form-label">enter json here</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control " id="requestjsonbox" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <!--submit button for fetch api-->
+
+        <div class="form-group row">
+
+            <div class="col-sm-10">
+                <button id="submit" class="btn btn-primary">submit</button>
+            </div>
+        </div>
+        <div class="my-2" id="response">
+            <div class="form-group row">
+                <label for="response" class="col-sm-2 col-form-label">Response</label>
+                <div class="col-sm-10">
+                    <!-- <textarea class="form-control " id="responsetext" rows="3"></textarea>-->
+                    <pre class="langyage-js" style="max-height: 500px;">
+                    <code id="responsetxt" class="language-js">
+                             your respose will appear here
+                    </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="prism.js"></script>
+</body>
+
+</html>
